@@ -1,5 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.apache.tools.ant.filters.*;
+import org.apache.tools.ant.filters.FixCrLfFilter
 
 plugins {
     kotlin("jvm") version "1.7.20"
@@ -49,7 +49,7 @@ val filterCopy by tasks.registering(Copy::class) {
         }
     }
     // uncomment this line would address the issue
-    filter<FixCrLfFilter>("eol" to FixCrLfFilter.CrLf.newInstance("lf"))
+    // filter<FixCrLfFilter>("eol" to FixCrLfFilter.CrLf.newInstance("lf"))
 }
 
 tasks.register("verifyCopy") {
